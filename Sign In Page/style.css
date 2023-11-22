@@ -1,0 +1,19 @@
+.container{
+    padding: 20px;
+    text-align: center;
+    margin: 20%;
+    border-style:solid;
+    border-color: blue;
+    width: 20%;
+    height: 70%;
+    background-color:darkgrey;
+}
+button{
+    background-color: rgb(21, 110, 212);
+    color: antiquewhite;
+    padding: 5px 40px;
+    border-radius: 35%;
+}
+#input{
+    border-radius: 10%;
+}

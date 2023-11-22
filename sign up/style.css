@@ -1,0 +1,15 @@
+.container{
+    padding: 20px;
+    text-align: center;
+    margin: 20%;
+    border-style:solid;
+    border-color: blue;
+    width: 20%;
+    height: 70%;
+    background-color: rgb(99, 181, 213);
+}
+button{
+    background-color: black;
+    color: antiquewhite;
+    padding: 5px 40px;
+}

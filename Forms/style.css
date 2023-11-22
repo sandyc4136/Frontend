@@ -1,0 +1,19 @@
+*{
+    background-color: rgb(202, 187, 221);
+    
+}
+
+.container{
+    padding: 20px 20px 20px 20px;
+    margin: 20px;
+}
+#Regd_date{
+    text-align: right;
+}
+#date{
+    text-align: right;
+}
+
+#Birthplace{
+    text-align: right;
+}

@@ -1,0 +1,25 @@
+/* h4{
+    text-align: center;
+} */
+/* 
+body{
+    background-image: url(./images/C-DAC.jpg);
+    background-size: cover;
+  
+} */
+
+.container{
+    background-color: rgb(119, 97, 123);
+    
+    padding: 20px;
+    text-align: center;
+    margin: 20%;
+    border-style:solid;
+    
+    width: 20%;
+    /* height: 80%; */
+}
+
+input{
+    color: black;
+}

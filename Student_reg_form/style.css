@@ -1,0 +1,33 @@
+h2{
+    text-decoration: underline;
+    text-align: center;
+}
+
+.Container{
+    background-color: rgb(96, 12, 174);
+    padding: 10px;
+    margin: 10%;
+}
+
+*{
+    color: beige;
+}
+
+#input_date{
+    color: black;
+}
+
+#button{
+    color: black;
+    padding: 2px;
+    margin: 5px;
+}
+
+.button_class{
+    border-radius: 25%;
+    text-align: center;
+}
+
+select{
+    color: black;
+}
