@@ -1,7 +1,5 @@
-
 pi=3.14;
 r=4;
-
 console.log("1. Area of circle with radius 4cm : "+ r +pi*r*r);
 document.write("<br>1. Area of circle with radius 4cm : " + pi*r*r + " cm<sup>2</sup>");
 
