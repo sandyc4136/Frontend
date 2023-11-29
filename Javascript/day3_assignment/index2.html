@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>body{background-color: darkgray; } </style>
+</head>
+<body>
+    
+    <h2> Please Enter the details </h2>
+        <form id="form">
+            <label for="firstname">First Name  : </label>
+        <input type="text" name="firstname" id="firstname" required><br><br>
+        <label for="lastname">Last Name  : </label>
+        <input type="text" name="lastname" id="lastname" required><br><br>
+        <label for="contactNumber">Contact Number  : </label>
+        <input type="texat" name="contactNumber" id="contactNumber" required><br><br>
+        <label for="email" >Email : </label>
+        <input type="email" name="email" id="email" required><br><br>
+        <button type="button" onclick="printFormValues()">submit</button>
+        </form>
+    
+    <script>
+        function printFormValues(){
+
+        formV=document.getElementById("form");
+            firstname= formV.elements["firstname"].value;
+            lastname = formV.elements["lastname"].value;
+            contact = formV.elements["contactNumber"].value;
+             email = formV.elements["email"].value;
+    
+        formValues="First Name : " + firstname + "<br>"
+         + "Last Name : " + lastname + "<br>" +
+         "Contact Number : " + contact + "<br>" + "Email id : " + email;
+
+         document.body.innerHTML += "<h3>Form Input values</h3>" + formValues;
+        }
+
+    </script>
+</body>
+</html>
