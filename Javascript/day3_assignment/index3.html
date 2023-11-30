@@ -9,7 +9,22 @@
     <h3>Dropdown List : 
     </h3>
     <select name="Dropdown" id="Dropdown">
-        <option value="option1"></option>
+        <option value="option1">New Delhi</option>
+        <option value="option1">Mumbai</option>
+        <option value="option1">Hyderabad</option>
+        <option value="option1">Bangalore</option>
+        <option value="option1">Chennai</option>
     </select>
+    <button onclick="removeOption()">remove</button>
+    <script>
+        function removeOption(){
+            dropdown=document.getElementById("Dropdown");
+            selectedIndex=document.selectedIndex;
+            if(selectedIndex !==1)
+            dropdown.remove(selectedIndex);
+            else
+            alert("please select an option to remove");
+        }
+    </script>
 </body>
 </html>
