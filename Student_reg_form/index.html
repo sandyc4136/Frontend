@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Railway Reservation Form</h1>
+
+    <form id="reservationForm">
+        <label for="trainName">Train Name:</label>
+        <input type="text" id="trainName" required>
+
+        <label for="departure">Departure Station:</label>
+        <input type="text" id="departure" required>
+
+        <label for="destination">Destination Station:</label>
+        <input type="text" id="destination" required>
+
+        <label for="departureDate">Departure Date:</label>
+        <input type="date" id="departureDate" required>
+
+        <button type="button" onclick="submitDetails()">Submit</button>
+        <button type="button" onclick="deleteDetails()">Delete</button>
+    </form>
+
+    <table id="reservationTable">
+        <thead>
+            <tr>
+                <th>Train Name</th>
+                <th>Departure Station</th>
+                <th>Destination Station</th>
+                <th>Departure Date</th>
+            </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+    </table>
+
+    <script>
+        function submitDetails() {
+            const trainName = document.getElementById('trainName').value;
+            const departure = document.getElementById('departure').value;
+            const destination = document.getElementById('destination').value;
+            const departureDate = document.getElementById('departureDate').value;
+
+            const tableBody = document.querySelector('.tbody');
+            const newRow = tableBody.insertRow();
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+
+            cell1.textContent = trainName;
+            cell2.textContent = departure;
+            cell3.textContent = destination;
+            cell4.textContent = departureDate;
+
+            clearForm();
+        }
+
+        function deleteDetails() {
+            const tableBody = document.querySelector('#reservationTable tbody');
+            const rowCount = tableBody.rows.length;
+
+            if (rowCount > 0) {
+                tableBody.deleteRow(rowCount - 1);
+            }
+        }
+
+        function clearForm() {
+            document.getElementById('trainName').value = '';
+            document.getElementById('departure').value = '';
+            document.getElementById('destination').value = '';
+            document.getElementById('departureDate').value = '';
+        }
+    </script>
+
+</body>
+</html>

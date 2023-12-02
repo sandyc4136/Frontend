@@ -13,13 +13,35 @@ for(i=1;i<a.length-1;i++)
 console.log(max);
 // console.log(x);
 
-student={
+student=[{
         id:101,
         name:"Sandip",
         phone:["948287242","8288424","84824774"],
         marks:97,
-        address:{houseNo:"A-176",city:"mumbai",street:"ab",pincode: "388323"},
-    };
+        address:{houseNo:"A-176",city:"mumbai",street:"afdfb",pincode: "384348323"},
+    },
+    {
+        id:111,
+        name:"Sudip",
+        phone:["88248","2445","435324"],
+        marks:97,
+        address:{houseNo:"X-176",city:"rfvxc",street:"addb",pincode: "43"},
+    },
+    {
+        id:101,
+        name:"Samip",
+        phone:["32564","243566","55422"],
+        marks:97,
+        address:{houseNo:"A-16",city:"mumbai",street:"ab",pincode: "434"},
+    }];
 console.log(student);
-console.log(student.phone);
-console.log(student.address.city);
+// console.log(student.phone);
+// console.log(student.address.city);
+//  console.log(student[0].address);
+
+for(i=0;i<student.length;i++){
+    console.log(student[i].name,student[i].id);
+    console.log(student[i].address);
+        for(j=0;j<student[i].phone.length;j++)
+            console.log(student[i].phone[j]);
+}

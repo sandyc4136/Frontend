@@ -1,0 +1,35 @@
+h2{
+    margin-top: 20px;
+    color: rgb(12, 15, 22);
+    text-align: center;
+}
+body{
+    background-color: rgb(159, 95, 160);
+    padding-left: 30px;
+}
+
+.formTable{
+    padding: 20px 20px;
+    margin-top: 20px;
+    text-align: center;
+    border: 2px solid rgb(162, 173, 172);
+    margin-bottom: 20px;
+    background-color: rgb(115, 162, 178);
+}
+
+#btn{
+    background-color: darkgrey;
+   border-radius: 20px;
+    padding: 5px 15px ; 
+    cursor: pointer;
+} 
+
+input{
+    border: none;
+    border-bottom: 2px solid rgb(53, 43, 43);
+    outline: none;
+}
+
+label{
+    font-size: 18px;
+}

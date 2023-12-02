@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // sum=(a,b)=>{
+        //     return a+b;
+        // }
+        //  res=sum(3,4);
+        // console.log(res);
+
+        // var
+        // var x=5;
+        // // console.log(x);
+        // function show(){
+        //      x=6; //re-assignment
+        //     console.log(x);
+        //      x=10;
+        //     console.log(x);
+        // }
+        // show();
+        // console.log(x); // error : not accessible outside show
+                var a=6;
+        function show(){
+           
+            if(true){
+                var a=9;
+                console.log(a);
+            }
+            console.log(a);
+        }
+        show();
+        console.log(a);
+
+    </script>
+</body>
+</html>
