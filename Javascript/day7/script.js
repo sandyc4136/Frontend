@@ -17,7 +17,8 @@ var sum=(a,b)=>{
 //  fact(5);
 //  cube(4);
 
-setTimeout(sum/*callback function */,2000/* time in milisecond */,3,5 /*parameter for callback func */);
+setTimeout(sum/*callback function */,2000/* time in milisecond */,3,5 /* arguments for callback func */);
 setTimeout(fact,5000,6);
-setTimeout(cube,3000,4);
+setTimeout(cube,0,4);
+console.log("Hello");
  
