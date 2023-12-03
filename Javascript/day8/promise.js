@@ -42,22 +42,22 @@
 
 // Function to execute promise
 
-function checkEven(num){
-    var evenPromise=new Promise((resolve,reject)=>{
-        if(num%2==0){
-            var msg="No. is even";
-            resolve(msg);
-        }
-        else {
-            var err="No. is odd. Promise not fulfilled"
-            reject(err);
-        }
-    });
-    return evenPromise;
-}
+// function checkEven(num){
+//     var evenPromise=new Promise((resolve,reject)=>{
+//         if(num%2==0){
+//             var msg="No. is even";
+//             resolve(msg);
+//         }
+//         else {
+//             var err="No. is odd. Promise not fulfilled"
+//             reject(err);
+//         }
+//     });
+//     return evenPromise;
+// }
 
-var result=checkEven(11).then((msg)=>{
-    console.log(msg);
-    }).catch((err)=>{
-        console.log(err);
-    });
+// var result=checkEven(11).then((msg)=>{
+//     console.log(msg);
+//     }).catch((err)=>{
+//         console.log(err);
+//     });
