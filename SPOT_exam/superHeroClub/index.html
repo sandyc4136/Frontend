@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Superheroz Club</title>
+    <style>
+      body {
+        background-image: url(superHeroBackground.jpeg);
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #e6e6e6;
+      }
+
+      .favorite {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Superhero List</h1>
+      <label for="superheroName">Superhero Name:</label>
+      <input
+        type="text"
+        id="superheroName"
+        placeholder="Enter superhero name"
+      />
+
+      <label for="category">Category:</label>
+      <select id="category">
+        <option value="marvel">Marvel</option>
+        <option value="dc">DC</option>
+      </select>
+
+      <label for="favorite">Favorite:</label>
+      <input type="checkbox" id="favorite" />
+
+      <button onclick="addSuperhero()" style="background-color: green">
+        Add Superhero
+      </button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Superhero Name</th>
+            <th>Category</th>
+            <th>Favorite</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="superheroList"></tbody>
+      </table>
+    </div>
+
+    <script>
+      function addSuperhero() {
+        const name = document.getElementById("superheroName").value;
+        const category = document.getElementById("category").value;
+        const favorite = document.getElementById("favorite").checked;
+
+        const table = document.querySelector("table");
+        const tbody = document.getElementById("superheroList");
+        const row = tbody.insertRow();
+
+        const cell1 = row.insertCell(0);
+        cell1.innerText = name;
+
+        const cell2 = row.insertCell(1);
+        cell2.innerText = category;
+
+        const cell3 = row.insertCell(2);
+        cell3.innerText = favorite ? "Yes" : "No";
+
+        const cell4 = row.insertCell(3);
+
+        clearform();
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.style.backgroundColor = "red";
+        cell4.appendChild(deleteButton);
+        deleteButton.onclick = function () {
+          table.deleteRow(row.rowIndex);
+        };
+      }
+      function clearform(){
+       document.getElementById("superheroName").value='';
+      }
+    </script>
+  </body>
+</html>

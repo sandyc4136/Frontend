@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <div class="container"></div>
+    <input type="button" value="generate h1" onclick="handleBtnClick()">
+</body>
+<script>
+    function handleBtnClick(){
+        var h1=document.createElement("h1"); // create a new element
+        h1.innerHTML="Hello"; // assign content into the element
+    }
+</script>
+</html>

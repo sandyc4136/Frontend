@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decimal to Binary Converter</title>
+    <style>
+      body {
+        background-image: url(DigitBackground.jpeg);
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+        color: lightcyan;
+      }
+
+      input {
+        margin: 10px;
+        padding: 5px;
+      }
+
+      button {
+        padding: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Decimal to Binary Converter</h1>
+      <label for="decimalInput">Enter Decimal Number:</label>
+      <input
+        type="number"
+        id="decimalInput"
+        placeholder="Enter a decimal number"
+      />
+      <button onclick="convertToBinary()">Convert</button>
+      <p id="result"></p>
+    </div>
+    <script>
+      function convertToBinary() {
+        const decimalInput = document.getElementById("decimalInput").value;
+        const binaryResult = (decimalInput >>> 0).toString(2);
+        document.getElementById(
+          "result"
+        ).innerText = `Binary Form: ${binaryResult}`;
+        clearform();
+      }
+      function clearform(){
+        document.getElementById("decimalInput").value='';
+      }
+    </script>
+  </body>
+</html>
