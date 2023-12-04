@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Esse quo dicta voluptatum consequatur repellat minus amet neque optio aliquam corporis?
+    </p>
+    <input type="button" value="click..." onclick="handlebtnClick()">
+   <script>
+        function handlebtnClick(){
+            var p=document.getElementById("para");
+            var content=p.innerHTML;
+                console.log(content);
+        }
+    </script>
+</body>
+</html>

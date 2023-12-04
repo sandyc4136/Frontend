@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password show and hide</title>
+</head>
+<body>
+    <input type="password" placeholder="Enter your password " id="password">
+    <input type="button" value="show" onclick="handleBtnClick()" id="btn">
+    <script>
+        function handleBtnClick(){
+            var password=document.getElementById("password");
+            var btn=document.getElementById("btn");
+            var btnText=btn.getAttribute("value");
+            if (btnText=="show") {
+                btn.setAttribute("value","hide");
+                password.setAttribute("type","text");
+            } else {
+                btn.setAttribute("value","show");
+                password.setAttribute("type","password");
+            }
+        }
+        </script>
+</body>
+</html>
