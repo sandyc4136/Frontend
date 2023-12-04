@@ -6,13 +6,35 @@
     <title>Document Object Model</title>
 </head>
 <body>
-    <div class="container"></div>
+    <div id="container"></div>
     <input type="button" value="generate h1" onclick="handleBtnClick()">
+    <input type="button" value="remove h1" onclick="removeH1()">
 </body>
 <script>
+
+    // function handleBtnClick(){
+    //         alert("Hello I am an alert");
+    //     }
+
+
     function handleBtnClick(){
         var h1=document.createElement("h1"); // create a new element
         h1.innerHTML="Hello"; // assign content into the element
+        h1.setAttribute("id","heading");
+        var container=document.getElementById("container");
+        container.appendChild(h1);
     }
+    // function remove(){
+    //     document.getElementById("container").innerHTML='';
+    // }
+
+    function removeH1(){
+        var container=document.getElementById("container");
+        var h1=document.getElementById("heading");
+        // container.removeChild(h1); // this will remove the child of the parent or the mentioned element
+        //container.remove(); // this will remove the current node. It does not take any argument.
+        h1.remove();
+    }   
+
 </script>
 </html>
