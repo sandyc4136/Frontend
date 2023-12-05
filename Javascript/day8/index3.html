@@ -10,12 +10,18 @@
         Esse quo dicta voluptatum consequatur repellat minus amet neque optio aliquam corporis?
     </p>
     <input type="button" value="click..." onclick="handlebtnClick()">
+    <input type="button" value="change content" onclick="changeContent()">
    <script>
         function handlebtnClick(){
             var p=document.getElementById("para");
             var content=p.innerHTML;
                 console.log(content);
         }
+        function changeContent(){
+            var p=document.getElementById("para");
+            p.innerHTML="This is the changed Content";
+            console.log(p.innerHTML);
+        }
     </script>
 </body>
-</html>
+</html> 

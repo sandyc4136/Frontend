@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter Name" value="90 days left"
+id="nameField">
+    <input type="button" value="submit" onclick="getValue()">
+    <br><br>
+    <input type="number" placeholder="Enter 1st Number"  id="n1">
+    <input type="number" placeholder="Enter 2nd Number" id="n2">
+    <input type="button" value="add" onclick="sum()">
+    <script>
+        function getValue(){
+            var field = document.getElementById("nameField");
+            console.log((field).value);
+
+            //or 
+
+            // console.log(field.getAttribute("value"));  
+            }
+
+            function sum(){
+            var num1 = parseInt(document.getElementById("n1").value);
+            var num2 = parseInt(document.getElementById("n2").value);
+            // var x = parseInt(num1);
+            // var y = parseInt(num2);
+            // var num3 = num1 +num2;
+            console.log(num1 +num2);
+            }
+</script>
+</body>
+</html>
