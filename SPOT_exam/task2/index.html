@@ -11,7 +11,7 @@
     <div class="container">
         <h2>Determining the Character</h2>
         <label for="input">Input : </label>
-        <input type="text" name="input" id="input" placeholder="Please enter a single input" maxlength="1" oninput="determineChar()">
+        <input type="text" name="input" id="input" placeholder="Please enter a single input"  oninput="determineChar()">
     </div> 
     <div id="result">
 
@@ -25,7 +25,7 @@
             displayResult("Please enter a character");
             return;
         }
-        const digitRegex=/[0-9]/;
+        const digitRegex=/[-(0-9)]/;
         const alphabetRegex=/[a-zA-Z]/;
         if(digitRegex.test(CharacterData)){
             displayResult("Entered character is a Digit");
