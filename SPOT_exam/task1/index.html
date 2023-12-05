@@ -38,6 +38,21 @@
                 <button id="btn" type="submit" onclick="AddReservation()">Submit</button>
                 <button id="btn" onclick="DelteDetails()">Delete</button>
             </form>
+            <table id="table-data">
+                <thead>
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Train Number</th>
+                        <th>Train Class</th>
+                        <th>Origin Station</th>
+                        <th>Destination Station</th>
+                        <th>Departure Date</th>
+                        <th>Date of Journey</th>
+                        <th>Time of Journey</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody"></tbody>
+            </table>
         </div>
         <!-- <div class="formDetails"> Form Details </div> -->
         
@@ -53,23 +68,38 @@
             DOJ=form.elements["Date"].value;
             time=form.elements["TrainTime"].value;
 
-            details=
-                     "Train : "+ trainName + "<br>" +
-                    "Train Number : " + trainNumber + "<br>" +
-                    "Class : " + trainClass + "<br>" +
-                    "Origin : " + Origin + "<br>" +
-                    "Destination : " + Destination + "<br>" +
-                    "Date of Journey : " + DOJ + "<br>" +
-                    "Time : " + time + "<br>"
-                    ;
+            // details=
+            //          "Train : "+ trainName + "<br>" +
+            //         "Train Number : " + trainNumber + "<br>" +
+            //         "Class : " + trainClass + "<br>" +
+            //         "Origin : " + Origin + "<br>" +
+            //         "Destination : " + Destination + "<br>" +
+            //         "Date of Journey : " + DOJ + "<br>" +
+            //         "Time : " + time + "<br>"
+            //         ;
 
-            document.body.innerHTML+=details ;
+            // document.body.innerHTML+=details ;
+
+            var tbody=document.getElementById("table-data");
+            for(i=0;i<6;i++){
+
+                const row=tbody.insertRow();
+                
+                row.insertCell(0).textContent=trainName;
+                row.insertCell(1).textContent=trainNumber;
+                row.insertCell(2).textContent=trainClass;
+                row.insertCell(3).textContent=Origin;
+                row.insertCell(4).textContent=Destination;
+                row.insertCell(5).textContent=DOj;
+                row.insertCell(6).textContent=time;
+            }
         }
 
         function DelteDetails(){
             container=document.getElementsByClassName("container");
             document.body.innerHTML=container.elements["container"].value;
         }
+        
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

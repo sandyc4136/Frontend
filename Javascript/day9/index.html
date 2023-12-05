@@ -8,7 +8,7 @@
 <body>
     <input type="text" placeholder="Enter Name" value="90 days left"
 id="nameField">
-    <input type="button" value="submit" onclick="getValue()">
+    <input type="button" value="submit" id="btn" onclick="getValue()">
     <br><br>
     <input type="number" placeholder="Enter 1st Number"  id="n1">
     <input type="number" placeholder="Enter 2nd Number" id="n2">
@@ -19,13 +19,13 @@ id="nameField">
         Hello
     </p>
     <script>
-        function getValue(){
+            function getValue(){
             var field = document.getElementById("nameField");
             console.log((field).value);
 
             //or 
 
-            // console.log(field.getAttribute("value"));  
+             //console.log(field.getAttribute("value"));  
             }
 
             function sum(){
@@ -40,6 +40,7 @@ id="nameField">
             console.log(document.getElementById("result").textContent);
             }
 
+            
 </script>
 </body>
 </html>

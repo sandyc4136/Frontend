@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    <input type="button" value="Fetch" onclick="fetchData()">
+    <table border="1" cellpadding="10" cellspacing="0"><br><br>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="table-data"></tbody>
+    </table>
+
+    <script>
+        function fetchData(){
+        // Step 1: Create an Object of XMLHttpRequest();
+        var xhr=new XMLHttpRequest();
+        // Step 2: Initialize the request (mention url and request method )
+        // xhr.open() => (method) XMLHttpRequest.open(method: string, url: string
+        // | URL): void (+1 overload)
+        xhr.open("GET","https://jsonplaceholder.typicode.com/users");
+        // Step 3: Send request
+        xhr.send();
+        console.log("Request Sent .....");
+         
+
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = xhr.responseText; // this will give the response in string
+                console.log(response);
+                var data = JSON.parse(response); // here the parse() will return the actual array of JSON  
+                console.log(data);
+
+                var tbody=document.getElementById("table-data");
+
+        for (var i = 0; i < data.length; i++) {
+                    var row = document.createElement("tr");
+                    var idCol = document.createElement("td");
+                    var nameCol = document.createElement("td");
+                    var userNameCol = document.createElement("td");
+                    var phoneCol = document.createElement("td");
+                    var emailCol = document.createElement("td");
+                    
+                    idCol.innerHTML = data[i].id;
+                    nameCol.innerHTML = data[i].name;
+                    userNameCol.innerHTML = data[i].username;
+                    phoneCol.innerHTML = data[i].phone;
+                    emailCol.innerHTML = data[i].email;
+                    row.appendChild(idCol);
+                    row.appendChild(nameCol);
+                    row.appendChild(userNameCol);
+                    row.appendChild(phoneCol);
+                    row.appendChild(emailCol);
+
+                     tbody.appendChild(row);
+                }
+            }
+        }
+
+    }
+    </script>
+</body>
+</html> 
