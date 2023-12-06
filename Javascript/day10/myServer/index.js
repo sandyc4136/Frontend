@@ -1,7 +1,7 @@
 import express, { request, response } from 'express'; // importing whole express module
 var app=express(); // Creates an Express application. The express() function is a top-level function exported by the express module.
 
-app.use(express.json()); // use function adds a middleware (which is a gunction which gets executed after receiving the request and before sending the response)
+app.use(express.json()); // use function adds a middleware (which is a function which gets executed after receiving the request and before sending the response)
 // express.json() is a pre-built middleware that only parses json and only looks at requests where the Content-Type header matches the type option.
 
 app.get("/",(request,response)=>{ // here "/" is the base url (localhost:6000)
@@ -22,9 +22,9 @@ app.get("/sum/:a/:b",(request,response)=>{
 })
 
 app.post("/add",(request,response)=>{
-    var data=request.body;
-    console.log(data);
-    response.send({message: "Welcome to add "});
+    var a=request.body.x;
+    var b=request.body.y;
+    response.send({"sum":a+b});
 });
 
 app.listen(4900,()=>{
