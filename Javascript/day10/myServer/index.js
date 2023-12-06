@@ -10,11 +10,12 @@ app.get("/login",(request,response)=>{
     // response.send() is same  as response.write() and response.end() combined;
 })
 
-app.post("/sum",(request,response)=>{
-    var a=10;
-    var b=20;
-    var c=a+b;
-    response.send({"sum":c});
+app.get("/sum/:a/:b",(request,response)=>{
+    var x=parseInt(request.params.a); // params is a predefined object which takes 2 key:value pair
+    var y=parseInt(request.params.b);
+    // var c=a+b;
+     response.send({sum:x+y});
+    
 })
 
 app.listen(4900,()=>{
