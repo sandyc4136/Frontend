@@ -1,6 +1,6 @@
-exports.sum=(a,b)=>{
+export var sum=(a,b)=>{
     return a+b;
 }
-exports.product=(a,b)=>{
+export var product=(a,b)=>{
     return a*b;
 }
