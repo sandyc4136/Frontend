@@ -1,4 +1,4 @@
-import express from "express";
+import express, { request, response } from "express";
 import mongoose from "mongoose";
 import { Student } from "./StudentModel.js";
 
@@ -25,6 +25,16 @@ app.post("/student",async (request,response)=>{
         response.send({message:"Something went wrong.."});
     }
 });
+
+app.get("/student",async (request,response)=>{
+    try {
+        const students=await Student.find(); // find() function will fetch all the details from the collection 
+        response.send({students:students});
+    } catch (error) {
+        response.send({message:"Something went wrong.."});
+    }
+})
+
 
 app.listen(5940,()=>{
     console.log("Server has started on 5940");
