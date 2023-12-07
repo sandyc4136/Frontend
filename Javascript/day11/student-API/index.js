@@ -22,7 +22,7 @@ app.post("/student",async (request,response)=>{
         await student.save();
         response.send({message:"Student inserted"});
     } catch (error) {
-        response.send({message:"Something went wrong.."});
+        response.status(500).send({message:"Something went wrong.."});
     }
 });
 
@@ -31,9 +31,9 @@ app.get("/student",async (request,response)=>{
         const students=await Student.find(); // find() function will fetch all the details from the collection 
         response.send({students:students});
     } catch (error) {
-        response.send({message:"Something went wrong.."});
+        response.status(500).send({message:"Something went wrong.."});
     }
-})
+});
 
 app.get("/student/:roll", async (request,response)=>{
     try {
@@ -41,9 +41,9 @@ app.get("/student/:roll", async (request,response)=>{
         if(student==null) response.status(404).send({"message":"Student not found"});
         response.send({student:student});
     } catch (error) {
-        response.send({message:"Something went wrong ..."});
+        response.status(500).send({message:"Something went wrong ..."});
     } 
-})
+});
 
 app.listen(5940,()=>{
     console.log("Server has started on 5940");
