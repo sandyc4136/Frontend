@@ -45,6 +45,23 @@ app.get("/student/:roll", async (request,response)=>{
     } 
 });
 
+app.delete("/student/:roll",async (request,response)=>{
+    try {
+        await Student.deleteOne({roll:request.params.roll}); // deleteOne() used to delete single object matching the criteria
+        response.send({message:"Student deleted"});
+    } catch (error) {
+        response.status(500).send({message:"Something went wrong..."});
+    }
+})
+
+app.put("/student/:roll",async (request,response)=>{
+    try {
+        await Student.updateOne({roll:request.params.roll},request.body);
+        response.send({message:"Student Updated"});
+    } catch (error) {
+        response.status(500).send({message:"Something went wrong..."});
+    }
+})
 app.listen(5940,()=>{
     console.log("Server has started on 5940");
     connectDb();
