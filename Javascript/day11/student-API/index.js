@@ -38,7 +38,7 @@ app.get("/student",async (request,response)=>{
 app.get("/student/:roll", async (request,response)=>{
     try {
         const student=await Student.findOne({roll:request.params.roll});
-        if(student==null) response.send({"message":"Student not found"});
+        if(student==null) response.status(404).send({"message":"Student not found"});
         response.send({student:student});
     } catch (error) {
         response.send({message:"Something went wrong ..."});
