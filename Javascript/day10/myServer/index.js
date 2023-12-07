@@ -1,4 +1,4 @@
-import express, { request, response } from 'express'; // importing whole express module
+import express from 'express'; // importing whole express module
 var app=express(); // Creates an Express application. The express() function is a top-level function exported by the express module.
 
 app.use(express.json()); // use function adds a middleware (which is a function which gets executed after receiving the request and before sending the response)
