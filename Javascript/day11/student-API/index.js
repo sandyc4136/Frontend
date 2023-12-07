@@ -35,6 +35,15 @@ app.get("/student",async (request,response)=>{
     }
 })
 
+app.get("/student/:roll", async (request,response)=>{
+    try {
+        const student=await Student.findOne({roll:request.params.roll});
+        if(student==null) response.send({"message":"Student not found"});
+        response.send({student:student});
+    } catch (error) {
+        response.send({message:"Something went wrong ..."});
+    } 
+})
 
 app.listen(5940,()=>{
     console.log("Server has started on 5940");
